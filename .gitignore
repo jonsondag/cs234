@@ -1,0 +1,12 @@
+/results
+.idea
+.DS_Store
+venv
+__pycache__
+.ipynb_checkpoints
+## laTeX
+*.aux
+*.synctex.gz
+*.log
+hw2/results*
+.python-version
