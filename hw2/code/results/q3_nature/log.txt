@@ -1,0 +1,124 @@
+2021-12-03 12:37:19,405:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:52: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-12-03 12:37:19,409:WARNING: From q3_nature.py:57: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+2021-12-03 12:37:19,410:WARNING: From q3_nature.py:58: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+2021-12-03 12:37:19,410:WARNING: From /Users/jsondag/.pyenv/versions/venv/lib/python3.7/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2021-12-03 12:37:19,441:WARNING: From q3_nature.py:61: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+2021-12-03 12:37:19,445:WARNING: From q3_nature.py:62: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2021-12-03 12:37:19,511:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:139: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+2021-12-03 12:37:19,511:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:139: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+2021-12-03 12:37:19,521:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:184: The name tf.squared_difference is deprecated. Please use tf.math.squared_difference instead.
+
+2021-12-03 12:37:19,522:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:221: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+2021-12-03 12:37:19,615:WARNING: From /Users/jsondag/.pyenv/versions/venv/lib/python3.7/site-packages/tensorflow_core/python/ops/clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2021-12-03 12:37:19,735:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:227: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+
+2021-12-03 12:37:19,741:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:100: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-12-03 12:37:19,758:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:132: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+2021-12-03 12:37:19,773:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:147: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+2021-12-03 12:37:19,773:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:148: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+2021-12-03 12:37:19,830:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:106: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+2021-12-03 12:37:19,929:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:113: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+2021-12-03 12:37:19,958:INFO: Evaluating...
+2021-12-03 12:37:20,057:INFO: Average reward: -0.50 +/- 0.00
+2021-12-03 12:37:20,276:INFO: Evaluating...
+2021-12-03 12:37:20,333:INFO: Average reward: -1.00 +/- 0.00
+2021-12-03 12:37:20,972:INFO: Evaluating...
+2021-12-03 12:37:21,043:INFO: Average reward: -0.90 +/- 0.00
+2021-12-03 12:37:21,695:INFO: Evaluating...
+2021-12-03 12:37:21,768:INFO: Average reward: 0.50 +/- 0.00
+2021-12-03 12:37:22,446:INFO: Evaluating...
+2021-12-03 12:37:22,527:INFO: Average reward: 0.50 +/- 0.00
+2021-12-03 12:37:23,190:INFO: Evaluating...
+2021-12-03 12:37:23,266:INFO: Average reward: 2.00 +/- 0.00
+2021-12-03 12:37:24,001:INFO: Evaluating...
+2021-12-03 12:37:24,112:INFO: Average reward: 4.00 +/- 0.00
+2021-12-03 12:37:24,801:INFO: Evaluating...
+2021-12-03 12:37:24,880:INFO: Average reward: 4.10 +/- 0.00
+2021-12-03 12:37:25,581:INFO: Evaluating...
+2021-12-03 12:37:25,663:INFO: Average reward: 4.10 +/- 0.00
+2021-12-03 12:37:26,055:INFO: - Training done.
+2021-12-03 12:37:26,184:INFO: Evaluating...
+2021-12-03 12:37:26,248:INFO: Average reward: 4.10 +/- 0.00
+2021-12-03 14:19:24,988:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:52: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-12-03 14:19:24,992:WARNING: From q3_nature.py:57: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+2021-12-03 14:19:24,993:WARNING: From q3_nature.py:58: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+2021-12-03 14:19:24,993:WARNING: From /Users/jsondag/.pyenv/versions/venv/lib/python3.7/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2021-12-03 14:19:25,022:WARNING: From q3_nature.py:61: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+2021-12-03 14:19:25,026:WARNING: From q3_nature.py:62: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2021-12-03 14:19:25,094:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:139: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+2021-12-03 14:19:25,094:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:139: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+2021-12-03 14:19:25,105:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:184: The name tf.squared_difference is deprecated. Please use tf.math.squared_difference instead.
+
+2021-12-03 14:19:25,107:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:221: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+2021-12-03 14:19:25,205:WARNING: From /Users/jsondag/.pyenv/versions/venv/lib/python3.7/site-packages/tensorflow_core/python/ops/clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2021-12-03 14:19:25,322:WARNING: From /Users/jsondag/dev/cs234/hw2/code/q2_linear.py:227: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+
+2021-12-03 14:19:25,328:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:100: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-12-03 14:19:25,348:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:132: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+2021-12-03 14:19:25,354:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:147: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+2021-12-03 14:19:25,370:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:148: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+2021-12-03 14:19:25,436:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:106: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+2021-12-03 14:19:25,534:WARNING: From /Users/jsondag/dev/cs234/hw2/code/core/deep_q_learning.py:113: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+2021-12-03 14:19:25,562:INFO: Evaluating...
+2021-12-03 14:19:25,664:INFO: Average reward: -0.50 +/- 0.00
+2021-12-03 14:19:25,893:INFO: Evaluating...
+2021-12-03 14:19:25,955:INFO: Average reward: -0.50 +/- 0.00
+2021-12-03 14:19:26,613:INFO: Evaluating...
+2021-12-03 14:19:26,699:INFO: Average reward: 1.40 +/- 0.00
+2021-12-03 14:19:27,355:INFO: Evaluating...
+2021-12-03 14:19:27,435:INFO: Average reward: 4.10 +/- 0.00
+2021-12-03 14:19:28,130:INFO: Evaluating...
+2021-12-03 14:19:28,222:INFO: Average reward: 4.00 +/- 0.00
+2021-12-03 14:19:28,892:INFO: Evaluating...
+2021-12-03 14:19:28,982:INFO: Average reward: 4.00 +/- 0.00
+2021-12-03 14:19:29,676:INFO: Evaluating...
+2021-12-03 14:19:29,780:INFO: Average reward: 4.10 +/- 0.00
+2021-12-03 14:19:30,476:INFO: Evaluating...
+2021-12-03 14:19:30,582:INFO: Average reward: 4.10 +/- 0.00
+2021-12-03 14:19:31,311:INFO: Evaluating...
+2021-12-03 14:19:31,409:INFO: Average reward: 4.10 +/- 0.00
+2021-12-03 14:19:31,821:INFO: - Training done.
+2021-12-03 14:19:31,950:INFO: Evaluating...
+2021-12-03 14:19:32,055:INFO: Average reward: 4.10 +/- 0.00

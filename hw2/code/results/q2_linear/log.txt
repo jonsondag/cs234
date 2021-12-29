@@ -1,0 +1,17 @@
+2021-12-03 14:38:33,959:WARNING: From q2_linear.py:52: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-12-03 14:38:33,965:WARNING: From q2_linear.py:95: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+2021-12-03 14:38:33,965:WARNING: From q2_linear.py:96: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+2021-12-03 14:38:33,965:WARNING: From /Users/jsondag/.pyenv/versions/venv/lib/python3.7/site-packages/tensorflow_core/python/layers/core.py:332: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2021-12-03 14:38:33,971:WARNING: From q2_linear.py:97: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2021-12-03 14:38:33,997:WARNING: From q2_linear.py:139: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+2021-12-03 14:38:33,998:WARNING: From q2_linear.py:139: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
