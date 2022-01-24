@@ -32,7 +32,13 @@ def build_mlp(
   """
   #######################################################
   #########   YOUR CODE HERE - 7-20 lines.   ############
-  
-  # TODO
+  with tf.variable_scope(scope):
+    layer_output = mlp_input
+    for layer_num in range(n_layers):
+      layer_output = tf.layers.dense(layer_output, size, tf.nn.relu)
+    layer_output = tf.layers.dense(layer_output, output_size, None)
+    if output_activation is not None:
+      layer_output = output_activation(layer_output)
+  return layer_output
   #######################################################
   #########          END YOUR CODE.          ############

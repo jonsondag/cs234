@@ -7,7 +7,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
-SCALARS = {'Max_Reward', 'Avg_Reward', 'Std_Reward', 'Eval_Reward'}
+SCALARS = {'Max_Reward_1', 'Avg_Reward_1', 'Std_Reward_1', 'Eval_Reward_1'}
 
 def early_exit(message):
     print(message)
@@ -33,7 +33,7 @@ def plot_combined(scalar_results):
             points[step].append(value)
     
     xs = sorted(points.keys())
-    values = np.array([points[x] for x in xs])
+    values = np.array([points[x] if len(points[x]) == 3 else points[93] for x in xs])
     ys = np.mean(values, axis=1)
     yerrs = stats.sem(values, axis=1)
     plt.fill_between(xs, ys - yerrs, ys + yerrs, alpha=0.25)
@@ -99,5 +99,5 @@ if __name__ == '__main__':
     all_by_scalar = group_by_scalar(all_results)
     
     for scalar in SCALARS:
-        plot([baseline_by_scalar[scalar], no_baseline_by_scalar[scalar]], ['Baseline', 'No baseline'], scalar, True, plots_dir)
+        plot([baseline_by_scalar[scalar], no_baseline_by_scalar[scalar]], ['Baseline', 'Baseline', 'NoBaseline', 'NoBaseline0'], scalar, True, plots_dir)
         plot(all_by_scalar[scalar], all_names, scalar, False, plots_dir)

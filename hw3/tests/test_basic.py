@@ -1,3 +1,5 @@
+import sys
+sys.path.append("/Users/jsondag/dev/cs234/hw3/code")
 import unittest
 import code
 from code.baseline_network import BaselineNetwork

@@ -70,8 +70,12 @@ class PG(object):
     """
     #######################################################
     #########   YOUR CODE HERE - 4-6 lines.   ############
-    
-    # TODO
+    self.observation_placeholder = tf.placeholder(tf.float32, shape=(None, self.observation_dim))
+    if self.discrete:
+      self.action_placeholder = tf.placeholder(tf.int32, shape=(None, ))
+    else:
+      self.action_placeholder = tf.placeholder(tf.float32, shape=(None, self.action_dim))
+    self.advantage_placeholder = tf.placeholder(tf.float32, shape=(None, ))
     #######################################################
     #########          END YOUR CODE.          ############
 
@@ -125,7 +129,23 @@ class PG(object):
     """
     #######################################################
     #########   YOUR CODE HERE - 8-12 lines.   ############
-
+    if self.discrete:
+      # use None for output activation even in discrete case since we want the logits (thing that gets fed to softmax)
+      action_logits = build_mlp(self.observation_placeholder, self.action_dim, scope, self.config.n_layers,
+                                self.config.layer_size, None)
+      self.action_logits = action_logits
+      sampled_action = tf.multinomial(action_logits, 1)
+      self.sampled_action = tf.squeeze(sampled_action, axis=1)
+      self.logprob = tf.math.negative(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=self.action_placeholder,
+                                                                                     logits=action_logits))
+    else:
+      action_means = build_mlp(self.observation_placeholder, self.action_dim, scope, self.config.n_layers,
+                               self.config.layer_size, None)
+      log_std = tf.get_variable('log_std', [self.action_dim])
+      std = tf.math.exp(log_std)
+      self.sampled_action = tf.math.add(tf.math.multiply(tf.random_normal([self.action_dim]), std), action_means)
+      normal_dist = tf.contrib.distributions.MultivariateNormalDiag(loc=action_means, scale_diag=std)
+      self.logprob = tf.math.log(normal_dist.prob(self.action_placeholder))
     #######################################################
     #########          END YOUR CODE.          ############
 
@@ -147,8 +167,7 @@ class PG(object):
 
     ######################################################
     #########   YOUR CODE HERE - 1-2 lines.   ############
-    
-    # TODO
+    self.loss = tf.math.negative(tf.reduce_mean(self.logprob * self.advantage_placeholder))
     #######################################################
     #########          END YOUR CODE.          ############
 
@@ -159,8 +178,8 @@ class PG(object):
     """
     ######################################################
     #########   YOUR CODE HERE - 1-2 lines.   ############
-    
-    # TODO
+    optimizer = tf.train.AdamOptimizer(self.lr)
+    self.train_op = optimizer.minimize(self.loss)
     #######################################################
     #########          END YOUR CODE.          ############
 
@@ -311,7 +330,12 @@ class PG(object):
       for step in range(self.config.max_ep_len):
         states.append(state)
         action = self.sess.run(self.sampled_action, feed_dict={self.observation_placeholder : states[-1][None]})[0]
+        # print('action:' + str(action))
+        # print(action_logits)
+        # action, logprob = self.sess.run([self.sampled_action, self.logprob], feed_dict={self.observation_placeholder : states[-1][None]})
+        # import pdb; pdb.set_trace()
         state, reward, done, info = env.step(action)
+        # print('action: ' + str(action) + ' state: ' + str(state) + ' done: ' + str(done))
         actions.append(action)
         rewards.append(reward)
         episode_reward += reward
@@ -361,7 +385,17 @@ class PG(object):
       rewards = path["reward"]
       #######################################################
       #########   YOUR CODE HERE - 5-10 lines.   ############
-      
+      gamma_list = np.power(self.config.gamma, np.arange(len(rewards)))
+      returns = []
+      for i in range(len(rewards)):
+        relevant_rewards = rewards[i:]
+        if i == 0:
+          relevant_gammas = gamma_list
+        else:
+          relevant_gammas = gamma_list[:-i]
+        scaled_rewards = relevant_rewards * relevant_gammas
+        returns.append(np.sum(scaled_rewards))
+      returns = np.array(returns)
       #######################################################
       #########          END YOUR CODE.          ############
       all_returns.append(returns)
@@ -385,8 +419,9 @@ class PG(object):
     """
     #######################################################
     #########   YOUR CODE HERE - 1-5 lines.   ############
-
-    
+    result = advantages / np.std(advantages)
+    result = result - np.mean(result)
+    advantages = result
     #######################################################
     #########          END YOUR CODE.          ############
     return advantages
@@ -442,11 +477,10 @@ class PG(object):
       # run training operations
       if self.config.use_baseline:
         self.baseline_network.update_baseline(returns, observations)
-      self.sess.run(self.train_op, feed_dict={
+      tr_op, l_op, lp, ap, sa = self.sess.run([self.train_op, self.loss, self.logprob, self.advantage_placeholder, self.sampled_action], feed_dict={
                     self.observation_placeholder : observations,
                     self.action_placeholder : actions,
                     self.advantage_placeholder : advantages})
-
       # tf stuff
       if (t % self.config.summary_freq == 0):
         self.update_averages(total_rewards, scores_eval)
@@ -497,9 +531,11 @@ class PG(object):
     self.initialize()
     # record one game at the beginning
     if self.config.record:
-        self.record()
+        pass
+        # self.record()
     # model
     self.train()
     # record one game at the end
     if self.config.record:
-      self.record()
+      pass
+      # self.record()

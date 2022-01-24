@@ -9,4 +9,5 @@ __pycache__
 *.synctex.gz
 *.log
 hw2/results*
+hw3/results*
 .python-version

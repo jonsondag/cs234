@@ -49,8 +49,11 @@ class BaselineNetwork(object):
     """
     ######################################################
     #########   YOUR CODE HERE - 4-8 lines.   ############
-    
-    # TODO
+    self.baseline = tf.squeeze(build_mlp(self.observation_placeholder, 1, scope, self.config.n_layers,
+                              self.config.layer_size))
+    loss = tf.losses.mean_squared_error(self.baseline_target_placeholder, self.baseline)
+    optimizer = tf.train.AdamOptimizer(self.lr)
+    self.update_baseline_op = optimizer.minimize(loss)
     #######################################################
     #########          END YOUR CODE.          ############
 
@@ -74,7 +77,8 @@ class BaselineNetwork(object):
     """
     #######################################################
     #########   YOUR CODE HERE - 1-4 lines.   ############
-      
+    baselines = self.sess.run(self.baseline, feed_dict={self.observation_placeholder : observations})
+    adv = returns - baselines
     #######################################################
     #########          END YOUR CODE.          ############
     return adv
@@ -92,7 +96,8 @@ class BaselineNetwork(object):
     """
     #######################################################
     #########   YOUR CODE HERE - 1-5 lines.   ############
-    
-    # TODO
+    self.sess.run(self.update_baseline_op,
+                  feed_dict={self.observation_placeholder : observations,
+                             self.baseline_target_placeholder : returns})
     #######################################################
     #########          END YOUR CODE.          ############
