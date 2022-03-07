@@ -7,6 +7,6 @@ Original assignment code in commit titled [initial commit](https://github.com/jo
 Each hw directory includes python code, .tex source and generated latex .pdf for the assignment.
 
 There's a fair amount of assignment template code in the repo and it may be easiest to see my work using these commit diffs:
-* [hw1 commit diff](https://github.com/jonsondag/cs234/commit/93c1c2eb7090c2d956cc3af575f627783ef5a9c7)
-* [hw2 commit diff](https://github.com/jonsondag/cs234/commit/ec6c1499071140a8e72a3f3105c93c51a66802b3)
-* [hw3 commit diff](https://github.com/jonsondag/cs234/commit/53f3b193e1ac9097d38fae45bca685905a204127)
+* [hw1 commit diff](https://github.com/jonsondag/cs234/commit/bedc3ab3defe26c0e0ecd64ef04528d5704cbdc5)
+* [hw2 commit diff](https://github.com/jonsondag/cs234/commit/669654b46abe70851a502e1a0e56c53674fbb51c)
+* [hw3 commit diff](https://github.com/jonsondag/cs234/commit/813b8aac7a03ff84ad9c45f48804bacc4204ec45)
